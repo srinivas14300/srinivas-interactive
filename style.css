@@ -1,0 +1,250 @@
+/* Global styles */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Background styles */
+.background {
+  position: fixed; /* Make the background fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind all other content */
+  background-image: url('https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg?t=st=1730630286~exp=1730633886~hmac=79628a61bf18984a8a2053a07956ce70010bfe973470d66b504a67927f1d49ab&w=2000'), linear-gradient(270deg, #ff6a00, #ff00d4, #00bfff, #1e1e1e);
+  background-size: cover, 400% 400%; /* Cover and size for gradient */
+  animation: gradientAnimation 30s ease-in-out; /* Animation definition */
+}
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header styles */
+header {
+  background: rgba(30, 30, 30, 0.8); /* Semi-transparent background */
+  color: #ff00bb; /* Gold title color */
+  padding: 20px 300px; /* Generous padding for space */
+  text-align: center;
+  border-bottom: 4px solid #ffee00; /* Gold border for separation */
+  background-color: black;
+}
+
+header h1 {
+  font-family: 'Times New Roman', Times, serif; /* Modern font */
+  font-size: 4.5em; /* Larger font size for emphasis */
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(3, 3, 254, 0.944); /* Stronger shadow for depth */
+}
+
+header p {
+  font-family: 'Arial', sans-serif; /* Clean sans-serif font */
+  font-size: 1.8em; /* Larger size for readability */
+  margin-top: 20px; /* Space above paragraph */
+  color: #e600ff; /* Gold color */
+  letter-spacing: 1.5px; /* Increased letter spacing for clarity */
+}
+
+/* Navigation styles */
+nav {
+  background: rgba(30, 30, 30, 0.8); /* Semi-transparent background */
+  padding: 15px 20px; /* Padding for spacing */
+  text-align: left; /* Align items to the left */
+  border-bottom: 2px solid #FFD700; /* Gold border at the bottom */
+}
+
+nav ul {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+  display: inline-block; /* Display items inline */
+  margin-right: 30px; /* Space between items */
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove underline */
+  color: #FFD700; /* Gold color for links */
+  font-family: 'Arial', sans-serif; /* Font for navigation links */
+  font-size: 1.2em; /* Font size for better visibility */
+  padding: 10px 20px; /* Padding for button-like effect */
+  border-radius: 5px; /* Rounded corners */
+  transition: background 0.3s, color 0.3s; /* Smooth transition for effects */
+}
+
+nav ul li a:hover {
+  background: #FFD700; /* Gold background on hover */
+  color: #1e1e1e; /* Dark text on hover */
+}
+
+/* Grid container styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr)); /* Responsive card layout */
+  gap: 40px; /* Adjusted gap between grid items */
+  padding: 70px; /* Padding for the grid container */
+  justify-items: center; /* Center items horizontally */
+}
+
+/* Grid item styles */
+/* Grid item styles */
+.grid-item {
+  background: linear-gradient(145deg, rgba(255, 182, 193, 0.9), rgba(255, 105, 180, 0.9)); /* Light pink to hot pink gradient */
+  border: 2px solid #0800ff57; /* Gold border for cards */
+  border-radius: 15px; /* Rounded corners for cards */
+  padding: 20px; /* Reduced padding for card content */
+  text-align: center; /* Center text in cards */
+  box-shadow: 0 100px 100px rgba(10, 10, 10, 10); /* Stronger shadow for depth */
+  transition: transform 10s, box-shadow 1s; /* Smooth transition for effects */
+  width: 100%; /* Full width for card */
+  max-width: 300px; /* Maximum width to maintain size */
+  height: auto; /* Adjust height based on content */
+  position: relative; /* Position relative for pseudo-elements */
+  overflow: hidden; /* Hide overflow for pseudo-elements */
+}
+
+/* Add a shine effect with a pseudo-element */
+.grid-item::before {
+  content: "";
+  position: absolute; /* Position it absolutely */
+  top: -50%; /* Position it above the card */
+  left: -50%; /* Position it to the left of the card */
+  width: 200%; /* Cover twice the width of the card */
+  height: 200%; /* Cover twice the height of the card */
+  background:transparent rgb(255, 0, 179); /* White shine effect */
+  border-radius: 50%; /* Make it circular */
+  transform: rotate(30deg); /* Slightly rotate it for effect */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  opacity: 0; /* Start with no shine */
+}
+
+.grid-item:hover::before {
+  opacity: 1; /* Show shine on hover */
+}
+
+
+/* Footer styles */
+footer {
+  text-align: center; /* Centered text in footer */
+  padding: 20px; /* Padding for footer */
+  
+  color: #c4bad1; /* Gold text for footer */
+}/* Center the .about-card within the .about-container */
+.about-container {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  min-height: 80vh; /* Minimum height for centering in viewport */
+  padding: 20px; /* Optional padding around the card */
+}
+
+/* About card styling with subtle pulse animation */
+.about-card {
+  width: 80%; /* Adjust width as needed */
+  max-width: 800px; /* Maximum width for larger screens */
+  padding: 30px;
+  background: rgba(255, 182, 193, 0.9); /* Light pink background */
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: subtlePulse 3s ease-in-out infinite; /* Subtle pulse animation */
+}
+
+/* Define the subtle pulse animation */
+@keyframes subtlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); } /* Slight increase */
+}
+/* Services Container Styles */
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the cards horizontally */
+  padding: 50px;
+  gap: 30px; /* Space between each card */
+}
+
+/* Services Card Styles */
+.services-card {
+  background: linear-gradient(145deg, rgba(135, 206, 250, 0.8), rgba(0, 191, 255, 0.8));
+  padding: 30px;
+  width: 90%; /* Adjust width to make it responsive */
+  max-width: 400px; /* Maximum width for desktop */
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pulse Animation */
+.services-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.services-card:hover::after {
+  animation: pulse 2s infinite; /* Trigger pulse animation on hover */
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+/* Card styles */
+.card {
+  background: linear-gradient(145deg, rgba(255, 182, 193, 0.9), rgba(255, 105, 180, 0.9)); /* Light pink to hot pink gradient */
+  border: 2px solid #0800ff57; /* Gold border for card */
+  border-radius: 15px; /* Rounded corners for card */
+  padding: 20px; /* Padding for card content */
+  text-align: center; /* Center text in card */
+  box-shadow: 0 10px 30px rgba(10, 10, 10, 0.3); /* Shadow for depth */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  max-width: 600px; /* Maximum width for the card */
+  margin: 50px auto; /* Center the card */
+}
+
+/* Card hover animation */
+.card:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* Links styling */
+a {
+  color: #ff00bb; /* Gold color for links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+a:hover {
+  color: #1e1e1e; /* Dark color on hover */
+}
+
+/* Footer styles */
+footer {
+  text-align: center; /* Centered text in footer */
+  padding: 20px; /* Padding for footer */
+  color: #c4bad1; /* Footer text color */
+}
+.social-icon {
+  font-size: 24px; /* Adjust icon size */
+  color: #1100ff; /* Icon color */
+  margin: 0 10px; /* Space between icons */
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+.social-icon:hover {
+  color: #1e1e1e; /* Dark color on hover */
+}
